@@ -1,0 +1,31 @@
+<body>
+  <div>
+    <h1>{{title}}</h1>
+    <div>
+      <button (click)="getTasksFromService()" >Get All Tasks</button>
+      <p></p>
+      <div *ngFor="let task of tasks; let idx = index">
+        <p>{{task.title}}</p>
+        <button (click)="getTaskFromService(idx)">Show</button>
+      </div>
+      <app-task *ngIf="selectedTask" [taskToShow]="selectedTask"></app-task>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+</body>
+<!-- <body>
+  <h1>{{ title }}</h1>
+  <div>
+    <button (click)="getTasksFromService()">Get all tasks</button>
+    <h2>Task List</h2>
+    <div *ngFor="let task of tasks; let idx = index" class="task">
+      <h3>{{task.title}}</h3>
+      <button (click)='getTaskFromService(idx)'>Show details</button>
+    </div>
+    <div *ngIf="detail">
+      <p>{{ task?.title }}</p>
+      <p>{{ task?.description }}</p>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+</body> -->
